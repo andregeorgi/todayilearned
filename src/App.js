@@ -3,7 +3,7 @@ import supabase from "./supabase";
 import "./style.css";
 
 const CATEGORIES = [
-  { name: "technology", color: "#3b82f6" },
+  { name: "technology", color: "#1b2d9e" },
   { name: "science", color: "#16a34a" },
   { name: "finance", color: "#ef4444" },
   { name: "society", color: "#eab308" },
@@ -69,7 +69,12 @@ function Header({ showForm, setShowForm }) {
   return (
     <header className="header">
       <div className="logo">
-        <img src="logo.png" height="68" width="68" alt="Today I Learned Logo" />
+        <img
+          src="logo2.png"
+          height="68"
+          width="68"
+          alt="Today I Learned Logo"
+        />
         <h1>{appTitle}</h1>
       </div>
 
@@ -246,7 +251,7 @@ function Fact({ fact, setFacts }) {
   return (
     <li className="fact">
       <p>
-        {isDisputed ? <span className="disputed">[⛔️ DISPUTED]</span> : null}
+        {isDisputed ? <span className="disputed">[❌ DISPUTED]</span> : null}
         {fact.text}
         <a
           className="source"
@@ -271,16 +276,16 @@ function Fact({ fact, setFacts }) {
           onClick={() => handleVote("votesInteresting")}
           disabled={isUpdating}
         >
-          👍 {fact.votesInteresting}
+          ✔️ {fact.votesInteresting}
         </button>
         <button
           onClick={() => handleVote("votesMindblowing")}
           disabled={isUpdating}
         >
-          🤯 {fact.votesMindblowing}
+          💥 {fact.votesMindblowing}
         </button>
         <button onClick={() => handleVote("votesFalse")} disabled={isUpdating}>
-          ⛔️ {fact.votesFalse}
+          ❌ {fact.votesFalse}
         </button>
       </div>
     </li>
